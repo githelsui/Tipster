@@ -73,6 +73,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="editingBegins:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="rrU-RH-IAe"/>
+                                    <action selector="editingEnds:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="bwT-zg-kVj"/>
                                     <action selector="onEdit:" destination="BYZ-38-t0r" eventType="editingChanged" id="Hf9-sN-tkJ"/>
                                 </connections>
                             </textField>
