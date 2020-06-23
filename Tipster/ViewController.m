@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
+@property (weak, nonatomic) IBOutlet UIView *resultsView;
+@property (weak, nonatomic) IBOutlet UITextField *inputView;
 
 @end
 
@@ -43,22 +45,34 @@
 }
 
 - (IBAction)editingBegins:(id)sender {
+    
+    //CGRect newFrame = self.resultsView.frame;
+    
+//    CGRect inputFrame = self.inputView.frame;
+//    inputFrame.origin.y -= 30;
+//    inputFrame.size.width -= 50;
+//    inputFrame.size.height -= 50;
+    
+   
+       
     [UIView animateWithDuration:0.2 animations:^{
-        self.billField.frame = CGRectMake(self.billField.frame.origin.x, self.billField.frame.origin.y + 30, self.billField.frame.size.width +50, self.billField.frame.size.height + 50);
-        
-         self.tipLabel.alpha = 0;
+        self.resultsView.frame = CGRectMake(self.resultsView.frame.origin.x, self.resultsView.frame.origin.y + 30, self.resultsView.frame.size.width +50, self.resultsView.frame.size.height + 50);
+            self.resultsView.alpha = 1;
+//            self.tipControl.alpha = 1;
+         
     }];
 }
 
 - (IBAction)editingEnds:(id)sender {
-    CGRect newFrame = self.billField.frame;
+    CGRect newFrame = self.inputView.frame;
     newFrame.origin.y -= 30;
     newFrame.size.width -= 50;
     newFrame.size.height -= 50;
     
     [UIView animateWithDuration:0.2 animations:^{
-        self.billField.frame = newFrame;
-        self.tipLabel.alpha = 1;
+            self.billField.frame = newFrame;
+            self.resultsView.alpha = 0;
+            self.tipControl.alpha = 0;
     }];
 }
 
