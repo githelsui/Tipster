@@ -63,6 +63,9 @@
                                     <segment title="20%"/>
                                     <segment title="22%"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="valueChanged" id="fm9-yH-Tyi"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s7I-mO-1ES">
                                 <rect key="frame" x="155" y="120" width="241" height="34"/>
@@ -84,6 +87,7 @@
                     <navigationItem key="navigationItem" title="Tipster" id="Sos-Rq-BH0"/>
                     <connections>
                         <outlet property="billField" destination="s7I-mO-1ES" id="zDg-JB-gLp"/>
+                        <outlet property="tipControl" destination="1oA-ec-ODg" id="NNj-yW-2X8"/>
                         <outlet property="tipLabel" destination="e4R-sp-vGr" id="X9o-vG-GQO"/>
                         <outlet property="totalLabel" destination="Wli-JJ-8mJ" id="AFa-aR-C3A"/>
                     </connections>
