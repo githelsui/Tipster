@@ -15,19 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1oA-ec-ODg">
-                                <rect key="frame" x="18" y="301" width="376" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.76424979980046814" blue="0.59000048836281338" alpha="0.87401005993150682" colorSpace="custom" customColorSpace="displayP3"/>
-                                <segments>
-                                    <segment title="15%"/>
-                                    <segment title="20%"/>
-                                    <segment title="22%"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="valueChanged" id="fm9-yH-Tyi"/>
-                                </connections>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="$0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s7I-mO-1ES">
                                 <rect key="frame" x="20" y="337" width="374" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,6 +34,19 @@
                                 <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tip Percentage: 0.0%" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z8E-5T-fPs">
+                                <rect key="frame" x="19" y="283" width="374" height="45.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.68985165507299828" blue="0.44692223137541143" alpha="0.61601027399999997" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="editingBegins:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="j41-iG-GeJ"/>
+                                    <action selector="editingEnds:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="TKb-mV-nUS"/>
+                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="0A0-De-F1n"/>
+                                </connections>
+                            </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EeA-P1-5Ob">
                                 <rect key="frame" x="-1" y="353" width="414" height="617"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,19 +96,40 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.76424979979999996" blue="0.59000048839999997" alpha="0.87401005990000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6o9-Ft-AyC" appends="YES" id="s23-ve-rFn"/>
+                                </connections>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1oA-ec-ODg">
+                                <rect key="frame" x="20" y="290" width="376" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.76424979980046814" blue="0.59000048836281338" alpha="0.87401005993150682" colorSpace="custom" customColorSpace="displayP3"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                    <segment title="22%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="valueChanged" id="fm9-yH-Tyi"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="CUS-Iu-FC2" appends="YES" id="t8K-zI-zTW"/>
-                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tipster" id="Sos-Rq-BH0"/>
+                    <navigationItem key="navigationItem" title="Tipster" id="Sos-Rq-BH0">
+                        <barButtonItem key="rightBarButtonItem" image="info_icon" id="r7N-WP-fh4">
+                            <connections>
+                                <segue destination="WjV-6u-AV6" kind="show" id="yYk-E1-Lun"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="s7I-mO-1ES" id="zDg-JB-gLp"/>
                         <outlet property="billMessage" destination="zvv-F6-UCA" id="MaH-hS-QQZ"/>
+                        <outlet property="customTipField" destination="Z8E-5T-fPs" id="NI1-M2-91N"/>
                         <outlet property="inputView" destination="s7I-mO-1ES" id="ZGb-0f-zJL"/>
                         <outlet property="resultsView" destination="EeA-P1-5Ob" id="uWd-b1-713"/>
                         <outlet property="tipControl" destination="1oA-ec-ODg" id="NNj-yW-2X8"/>
@@ -117,13 +138,55 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="CUS-Iu-FC2">
+                <tapGestureRecognizer id="6o9-Ft-AyC">
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="kLP-Bf-qjU"/>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="eZn-LH-iOa"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="989.85507246376824" y="137.94642857142856"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="pI2-tI-3Lx">
+            <objects>
+                <viewController id="WjV-6u-AV6" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aaW-AL-pxH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Custom Tip Percentages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJE-ao-7JC">
+                                <rect key="frame" x="32" y="409" width="350" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayK-WH-tj9">
+                                <rect key="frame" x="184" y="459" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchSwapped:" destination="WjV-6u-AV6" eventType="valueChanged" id="yH3-b8-RFN"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Developed by Githel Suico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNJ-I7-btH">
+                                <rect key="frame" x="99" y="794" width="217" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="t6C-75-3Rb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qeG-Ye-VMm"/>
+                    <connections>
+                        <outlet property="tipSwitch" destination="ayK-WH-tj9" id="vbp-fr-p4u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MkF-8F-6gu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aqV-M1-A0O">
@@ -144,4 +207,7 @@
             <point key="canvasLocation" x="79.710144927536234" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info_icon" width="30" height="30"/>
+    </resources>
 </document>

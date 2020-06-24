@@ -17,59 +17,91 @@
 @property (weak, nonatomic) IBOutlet UIView *resultsView;
 @property (weak, nonatomic) IBOutlet UITextField *inputView;
 @property (weak, nonatomic) IBOutlet UILabel *billMessage;
+@property (weak, nonatomic) IBOutlet UITextField *customTipField;
 
 @end
 
 @implementation ViewController
 
+BOOL customTipBool;
+CGRect inputFrame;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.resultsView.alpha = 0;
     self.tipControl.alpha = 0;
-    
+    self.customTipField.alpha = 0;
 }
 
 - (IBAction)onTap:(id)sender {
-    NSLog(@"Hello");
     [self.view endEditing:YES];
 }
 
 - (IBAction)onEdit:(id)sender {
-    double bill = [self.billField.text doubleValue];
-    
-    NSArray *percentages = @[@(0.15), @(0.20), @(0.22)];
-    double tipPercentage = [percentages[self.tipControl.selectedSegmentIndex] doubleValue];
-    
-    double tip = tipPercentage * bill;
-    double total = bill + tip;
-    
-    self.tipLabel.text = [NSString stringWithFormat:@"$%.2f", tip];
-    self.totalLabel.text = [NSString stringWithFormat:@"$%.2f", total];
+    [self tipTypeLogic];
 }
 
 - (IBAction)editingBegins:(id)sender {
+    [self loadTipType];
     
-    CGRect inputFrame = self.inputView.frame;
+    inputFrame = self.inputView.frame;
     inputFrame.origin.y -= 250;
-       
     [UIView animateWithDuration:0.2 animations:^{
             self.inputView.frame = inputFrame;
             self.resultsView.alpha = 1;
-            self.tipControl.alpha = 1;
             self.billMessage.alpha = 0;
     }];
 }
 
 - (IBAction)editingEnds:(id)sender {
-    CGRect inputFrame = self.inputView.frame;
+    inputFrame = self.inputView.frame;
     inputFrame.origin.y += 250;
-    
     [UIView animateWithDuration:0.2 animations:^{
             self.inputView.frame = inputFrame;
             self.resultsView.alpha = 0;
             self.tipControl.alpha = 0;
+            self.customTipField.alpha = 0;
             self.billMessage.alpha = 1;
     }];
+}
+
+
+- (void)loadTipType{
+     customTipBool = [[NSUserDefaults standardUserDefaults] boolForKey:@"customTip"];
+    if(customTipBool){
+        [UIView animateWithDuration:0.2 animations:^{
+                 self.tipControl.alpha = 0;
+                 self.customTipField.alpha = 1;
+        }];
+    }
+    else{
+        [UIView animateWithDuration:0.2 animations:^{
+                 self.tipControl.alpha = 1;
+                 self.customTipField.alpha = 0;
+        }];
+    }
+}
+
+- (void)tipTypeLogic{
+    double bill = [self.billField.text doubleValue];
+    double total, tip;
+    
+    if(customTipBool){
+        double customTipVal = [self.customTipField.text doubleValue];
+        tip = customTipVal * bill;
+        NSLog(@"custom");
+        NSLog(@"Value of tip = %f", customTipVal);
+    }
+    else{
+        NSArray *percentages = @[@(0.15), @(0.20), @(0.22)];
+        double tipPercentage = [percentages[self.tipControl.selectedSegmentIndex] doubleValue];
+        tip = tipPercentage * bill;
+         NSLog(@"control");
+    }
+    total = bill + tip;
+    self.tipLabel.text = [NSString stringWithFormat:@"$%.2f", tip];
+    self.totalLabel.text = [NSString stringWithFormat:@"$%.2f", total];
+     
 }
 
 @end

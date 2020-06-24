@@ -16,6 +16,7 @@
 		CA6F7AA924A29C830013A97F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6F7AA824A29C830013A97F /* main.m */; };
 		CA6F7AB324A29C830013A97F /* TipsterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6F7AB224A29C830013A97F /* TipsterTests.m */; };
 		CA6F7ABE24A29C830013A97F /* TipsterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6F7ABD24A29C830013A97F /* TipsterUITests.m */; };
+		CA6F7ACD24A2D76A0013A97F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6F7ACC24A2D76A0013A97F /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		CA6F7AB924A29C830013A97F /* TipsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6F7ABD24A29C830013A97F /* TipsterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipsterUITests.m; sourceTree = "<group>"; };
 		CA6F7ABF24A29C830013A97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA6F7ACB24A2D76A0013A97F /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CA6F7ACC24A2D76A0013A97F /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				CA6F7A9C24A29C820013A97F /* ViewController.h */,
 				CA6F7A9D24A29C820013A97F /* ViewController.m */,
 				CA6F7A9F24A29C820013A97F /* Main.storyboard */,
+				CA6F7ACB24A2D76A0013A97F /* SettingsViewController.h */,
+				CA6F7ACC24A2D76A0013A97F /* SettingsViewController.m */,
 				CA6F7AA224A29C830013A97F /* Assets.xcassets */,
 				CA6F7AA424A29C830013A97F /* LaunchScreen.storyboard */,
 				CA6F7AA724A29C830013A97F /* Info.plist */,
@@ -269,6 +274,7 @@
 			files = (
 				CA6F7A9E24A29C820013A97F /* ViewController.m in Sources */,
 				CA6F7A9824A29C820013A97F /* AppDelegate.m in Sources */,
+				CA6F7ACD24A2D76A0013A97F /* SettingsViewController.m in Sources */,
 				CA6F7AA924A29C830013A97F /* main.m in Sources */,
 				CA6F7A9B24A29C820013A97F /* SceneDelegate.m in Sources */,
 			);
