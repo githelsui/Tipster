@@ -20,13 +20,6 @@
 }
 
 - (IBAction)switchSwapped:(id)sender {
-    if(self.tipSwitch.isOn){
-        NSLog(@"ON");
-    }
-    else{
-        NSLog(@"OFF");
-    }
-    
     [[NSUserDefaults standardUserDefaults] setBool:self.tipSwitch.on forKey:@"customTip"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
