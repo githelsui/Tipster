@@ -2,7 +2,9 @@
 Tip Calculator
 
 ## Features
--[x]
--[x]
+
+- Custom Tip Percentage Input
+- Suggested Tip Percentages via UISegmentedControl
+- Calculates as you type
 
 ## Demo
