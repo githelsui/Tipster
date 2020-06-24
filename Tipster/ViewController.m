@@ -31,6 +31,7 @@ CGRect inputFrame;
     self.resultsView.alpha = 0;
     self.tipControl.alpha = 0;
     self.customTipField.alpha = 0;
+    self.customTipField.layer.cornerRadius = 8;
 }
 
 - (IBAction)onTap:(id)sender {
@@ -90,7 +91,7 @@ CGRect inputFrame;
         double customTipVal = [self.customTipField.text doubleValue];
         tip = customTipVal * bill;
         NSLog(@"custom");
-        NSLog(@"Value of tip = %f", customTipVal);
+       
     }
     else{
         NSArray *percentages = @[@(0.15), @(0.20), @(0.22)];

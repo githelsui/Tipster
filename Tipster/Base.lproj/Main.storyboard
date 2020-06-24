@@ -34,19 +34,6 @@
                                 <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tip Percentage: 0.0%" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z8E-5T-fPs">
-                                <rect key="frame" x="19" y="283" width="374" height="45.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.68985165507299828" blue="0.44692223137541143" alpha="0.61601027399999997" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <action selector="editingBegins:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="j41-iG-GeJ"/>
-                                    <action selector="editingEnds:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="TKb-mV-nUS"/>
-                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="0A0-De-F1n"/>
-                                </connections>
-                            </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EeA-P1-5Ob">
                                 <rect key="frame" x="-1" y="353" width="414" height="617"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,7 +89,7 @@
                                 </connections>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1oA-ec-ODg">
-                                <rect key="frame" x="20" y="290" width="376" height="32"/>
+                                <rect key="frame" x="21" y="290" width="376" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.76424979980046814" blue="0.59000048836281338" alpha="0.87401005993150682" colorSpace="custom" customColorSpace="displayP3"/>
                                 <segments>
@@ -114,6 +101,19 @@
                                     <action selector="onEdit:" destination="BYZ-38-t0r" eventType="valueChanged" id="fm9-yH-Tyi"/>
                                 </connections>
                             </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tip Percentage: 0.0%" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z8E-5T-fPs">
+                                <rect key="frame" x="13" y="285" width="388" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.68985165507299828" blue="0.44692223137541143" alpha="0.61601027399999997" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="editingBegins:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="j41-iG-GeJ"/>
+                                    <action selector="editingEnds:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="TKb-mV-nUS"/>
+                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="0A0-De-F1n"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
