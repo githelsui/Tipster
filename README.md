@@ -8,3 +8,4 @@ Tip Calculator
 - Calculates as you type
 
 ## Demo
+![](TipsterDemo.gif)<br />
